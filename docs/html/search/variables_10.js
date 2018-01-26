@@ -1,0 +1,19 @@
+var searchData=
+[
+  ['sdk_5fstate_5fchange_5fcb',['sdk_state_change_cb',['../structappd__iot__sdk__config__t.html#a99af95967a1e301b6000d1a6dc5313e4',1,'appd_iot_sdk_config_t::sdk_state_change_cb()'],['../structappd__sdk__config__t.html#a99af95967a1e301b6000d1a6dc5313e4',1,'appd_sdk_config_t::sdk_state_change_cb()']]],
+  ['sdk_5fstate_5fto_5fstr',['sdk_state_to_str',['../log_8cpp.html#a1e33c87794f9d9a225045b7dd594c021',1,'log.cpp']]],
+  ['severity',['severity',['../structappd__iot__error__event__t.html#af23f637bc0fec78ad4886ad3c389e49b',1,'appd_iot_error_event_t::severity()'],['../structerror__event__t.html#aef717693ba02ec2faf617b545221192a',1,'error_event_t::severity()']]],
+  ['severity_5fstr',['severity_str',['../error__event_8cpp.html#ab755d0cea1909193c53a63e006c53a19',1,'error_event.cpp']]],
+  ['stack_5fframe',['stack_frame',['../structappd__iot__stack__trace__t.html#a7425008c1c6c3606ede6285138c4ac51',1,'appd_iot_stack_trace_t']]],
+  ['stack_5fframe_5fcount',['stack_frame_count',['../structappd__iot__stack__trace__t.html#a9436555483b768f75828402192b145b4',1,'appd_iot_stack_trace_t']]],
+  ['stack_5fframe_5flist',['stack_frame_list',['../structstack__trace__t.html#ad9fbffc8a18ff2b63c5c758c3d4b6094',1,'stack_trace_t']]],
+  ['stack_5ftrace',['stack_trace',['../structappd__iot__error__event__t.html#a45ec38f50ec4257fb30aeb113d11e6e8',1,'appd_iot_error_event_t']]],
+  ['stack_5ftrace_5fcount',['stack_trace_count',['../structappd__iot__error__event__t.html#ae8e5f43fc6684c824c85a7f098c78157',1,'appd_iot_error_event_t']]],
+  ['stack_5ftrace_5flist',['stack_trace_list',['../structerror__event__t.html#a195df429b96c7ceec36fc05159465d9c',1,'error_event_t']]],
+  ['stringmap',['stringmap',['../structdata__t.html#ab3cfa0c21df5e7d3ce605b3844ec1e93',1,'data_t']]],
+  ['strval',['strval',['../structappd__iot__data__t.html#a8e2a92d570381cb73ec9f2ddaeaa2704',1,'appd_iot_data_t']]],
+  ['summary',['summary',['../structappd__iot__custom__event__t.html#a01f3e852fed0577d6c8f059530d55d50',1,'appd_iot_custom_event_t::summary()'],['../structcustom__event__t.html#a53b4b42e792f5971e98ae1f7814456f4',1,'custom_event_t::summary()']]],
+  ['sw_5fversion',['sw_version',['../structappd__iot__device__config__t.html#a1efa8a9617ac123021fb195640456ffc',1,'appd_iot_device_config_t::sw_version()'],['../structdevice__cfg__t.html#af2ca61564f2fc82b5016c3dcd4972934',1,'device_cfg_t::sw_version()']]],
+  ['symbol_5fname',['symbol_name',['../structappd__iot__stack__frame__t.html#a7305745c355d8a5cf3cdd237a6bf8c31',1,'appd_iot_stack_frame_t::symbol_name()'],['../structstack__frame__t.html#afdecda47408b33b8c206d7577b014e1a',1,'stack_frame_t::symbol_name()']]],
+  ['symbol_5foffset',['symbol_offset',['../structappd__iot__stack__frame__t.html#acd39aa42df3732f5c9bfc993fb166fb3',1,'appd_iot_stack_frame_t::symbol_offset()'],['../structstack__frame__t.html#acd39aa42df3732f5c9bfc993fb166fb3',1,'stack_frame_t::symbol_offset()']]]
+];

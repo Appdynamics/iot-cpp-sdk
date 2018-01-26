@@ -1,0 +1,14 @@
+cmake_minimum_required(VERSION 3.0)
+ 
+project(cgreen NONE)
+ 
+include(ExternalProject)
+ExternalProject_Add(cgreen
+  DOWNLOAD_COMMAND	git clone https://github.com/cgreen-devs/cgreen.git .
+  DOWNLOAD_DIR		"${CMAKE_BINARY_DIR}/cgreen/src"
+  CONFIGURE_COMMAND ""
+  BUILD_COMMAND     ""
+  INSTALL_COMMAND   ""
+  TEST_COMMAND      ""
+  GIT_SUBMODULES	""
+)
