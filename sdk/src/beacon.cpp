@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018 AppDynamics, Inc., and its affiliates
+ * Copyright (c) 2018 AppDynamics LLC and its affiliates
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -93,7 +93,8 @@ appd_iot_error_code_t appd_iot_add_custom_event_to_beacon(custom_event_t event)
   {
     global_beacon.custom_event_list.push_back(event);
 
-    appd_iot_log(APPD_IOT_LOG_INFO, "Custom Event Added, Size:%zu", global_beacon.custom_event_list.size());
+    appd_iot_log(APPD_IOT_LOG_INFO, "Custom Event Added, Size:%lu",
+                 (unsigned long)global_beacon.custom_event_list.size());
 
     return APPD_IOT_SUCCESS;
   }
@@ -118,8 +119,8 @@ appd_iot_error_code_t appd_iot_add_network_request_event_to_beacon(network_reque
   {
     global_beacon.network_request_event_list.push_back(event);
 
-    appd_iot_log(APPD_IOT_LOG_INFO, "Network Event Added, Size:%zu",
-                 global_beacon.network_request_event_list.size());
+    appd_iot_log(APPD_IOT_LOG_INFO, "Network Event Added, Size:%lu",
+                 (unsigned long)global_beacon.network_request_event_list.size());
 
     return APPD_IOT_SUCCESS;
   }
@@ -144,7 +145,8 @@ appd_iot_error_code_t appd_iot_add_error_event_to_beacon(error_event_t event)
   {
     global_beacon.error_event_list.push_back(event);
 
-    appd_iot_log(APPD_IOT_LOG_INFO, "Error Event Added, Size:%zu", global_beacon.error_event_list.size());
+    appd_iot_log(APPD_IOT_LOG_INFO, "Error Event Added, Size:%lu",
+                 (unsigned long)global_beacon.error_event_list.size());
 
     return APPD_IOT_SUCCESS;
   }
@@ -167,10 +169,12 @@ appd_iot_error_code_t appd_iot_add_error_event_to_beacon(error_event_t event)
 appd_iot_error_code_t appd_iot_clear_all_beacons(void)
 {
   appd_iot_log(APPD_IOT_LOG_INFO, "Clearing All Beacons");
-  appd_iot_log(APPD_IOT_LOG_INFO, "Clearing %zu Custom Events", global_beacon.custom_event_list.size());
-  appd_iot_log(APPD_IOT_LOG_INFO, "Clearing %zu Network Events",
-               global_beacon.network_request_event_list.size());
-  appd_iot_log(APPD_IOT_LOG_INFO, "Clearing %zu Error Events", global_beacon.error_event_list.size());
+  appd_iot_log(APPD_IOT_LOG_INFO, "Clearing %lu Custom Events",
+               (unsigned long)global_beacon.custom_event_list.size());
+  appd_iot_log(APPD_IOT_LOG_INFO, "Clearing %lu Network Events",
+               (unsigned long)global_beacon.network_request_event_list.size());
+  appd_iot_log(APPD_IOT_LOG_INFO, "Clearing %lu Error Events",
+               (unsigned long)global_beacon.error_event_list.size());
 
   global_beacon.custom_event_list.clear();
   global_beacon.network_request_event_list.clear();
@@ -198,10 +202,12 @@ appd_iot_error_code_t appd_iot_send_all_beacons(void)
   }
 
   appd_iot_log(APPD_IOT_LOG_INFO, "Sending All Beacons");
-  appd_iot_log(APPD_IOT_LOG_INFO, "Sending %zu Custom Events", global_beacon.custom_event_list.size());
-  appd_iot_log(APPD_IOT_LOG_INFO, "Sending %zu Network Events",
-               global_beacon.network_request_event_list.size());
-  appd_iot_log(APPD_IOT_LOG_INFO, "Sending %zu Error Events", global_beacon.error_event_list.size());
+  appd_iot_log(APPD_IOT_LOG_INFO, "Sending %lu Custom Events",
+               (unsigned long)global_beacon.custom_event_list.size());
+  appd_iot_log(APPD_IOT_LOG_INFO, "Sending %lu Network Events",
+               (unsigned long)global_beacon.network_request_event_list.size());
+  appd_iot_log(APPD_IOT_LOG_INFO, "Sending %lu Error Events",
+               (unsigned long)global_beacon.error_event_list.size());
 
   /* Init all the data structures - REQ and RESP */
   appd_iot_http_req_t http_req;
