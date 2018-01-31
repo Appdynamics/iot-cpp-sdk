@@ -94,12 +94,12 @@ $ make tests
 
 ## How to Use
 
-Best place to understand the usage of SDK is to run the sample application. Please refer [README](sample/README.md) of sample application for steps to run.
+Best place to understand the usage of SDK is to run the sample application. Please refer [README](sample) of sample application for steps to run.
 
 Below are the steps to integrate and use SDK within your own application:
 
 1. Dynamically link SDK Library (libappdynamicsiot) to your application
-    * You can find libappdynamicsiot in lib/ folder once sdk target is built
+    * You can find the library `libappdynamicsiot` in lib/ folder once sdk target is built
     * If you are using cmake, refer to CMakeLists.txt within sample/ on how sdk library is linked
 2. Copy and import SDK headers from include directory into your application
 3. Get [EUM App Key and Collector URL](https://docs.appdynamics.com/display/PRO44/Set+Up+and+Access+IoT+Monitoring#SetUpandAccessIoTMonitoring-iot-app-key)
@@ -110,7 +110,7 @@ reported to Collector
 
 ## Additional Resources
 
-1. [SDK API docs](docs/README.md) - provides definition and implementation of SDK API
+1. [SDK API docs](docs) - provides definition and implementation of SDK API
 2. [REST API docs](https://docs.appdynamics.com/javadocs/iot-rest-api/4.4/latest/) - provides payload structure sent to IoT Collector
 3. [User Documents](https://docs.appdynamics.com/display/PRO44/IoT+Monitoring) - provides overview on IoT monitoring capabilities
 4. Sample Application in other languages are available on github

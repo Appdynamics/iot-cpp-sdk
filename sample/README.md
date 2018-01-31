@@ -6,10 +6,11 @@ This sample application uses IoT C++ SDK to fill and send sample IoT data (Custo
 ## Steps
 
 1. Build Sample Application using instructions given in [README](../README.md#Installation)
+   * You can find the executable `sample` in the build folder once the sample target is built
 2. [Get EUM App Key](https://docs.appdynamics.com/display/PRO44/Set+Up+and+Access+IoT+Monitoring#SetUpandAccessIoTMonitoring-iot-app-key)
 3. [Run the Sample App](#run-sample-app)
 4. [Confirm IoT Data is reported to Collector](https://docs.appdynamics.com/display/PRO44/Confirm+the+IoT+Application+Reported+Data+to+the+Controller)
-5. To Customize Instrumentation review [Getting Started](https://docs.appdynamics.com/pages/viewpage.action?pageId=42597347) and [SDK API docs](../docs/README.md)
+5. To Customize Instrumentation review [Getting Started](https://docs.appdynamics.com/pages/viewpage.action?pageId=42597347) and [SDK API docs](../docs)
 6. Refer to [REST API docs](https://docs.appdynamics.com/javadocs/iot-rest-api/4.4/latest/)  for payload structure sent to IoT Collector
 
 

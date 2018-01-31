@@ -3,7 +3,20 @@
 ## Overview
 Tests contain unit tests to verify the functionality of SDK.
 
-## Steps
+## Build Tests
+Follow the instructions given in [README](../README.md#Installation) to build tests. Tests require cmake option `-DBUILD_TESTS` to be set to 1.
 
-1. Build Tests using instructions given in [README](../README.md#Installation) with cmake option -DBUILD_TESTS set to 1.
-2. Tests can be run using `make run-tests` from build directory or using `tests` executable created when tests target is built.
+You can find the executable `tests` in the build folder once the tests target is successfully built
+
+## Run Tests
+Run tests from build folder using one of the below commands
+
+```sh
+$ make run-tests
+```
+
+OR
+
+```sh
+$ ./tests
+```

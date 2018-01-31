@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018 AppDynamics, Inc., and its affiliates
+ * Copyright (c) 2018 AppDynamics LLC and its affiliates
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -310,7 +310,7 @@ appd_iot_error_code_t appd_iot_convert_to_string
       break;
 
     case APPD_IOT_DOUBLE:
-      snprintf(buf, bufsize, "%lf", *(double*)value);
+      snprintf(buf, bufsize, "%f", *(double*)value);
       buf[bufsize - 1] = '\0';
       break;
 

@@ -2,10 +2,14 @@ cmake_minimum_required(VERSION 3.0)
 
 project(appdynamicsiotsdk)
 
+######################
+# Build Settings
+######################
+set (CMAKE_CXX_STANDARD 98)
+
 #####################################
 # Build Targets sdk, sample and tests
 #####################################
-
 add_subdirectory(sdk)
 add_subdirectory(sample)
 
