@@ -1,5 +1,7 @@
 # AppDynamics IoT C++ SDK
 
+[![Build Status](https://travis-ci.org/jimix/iot-cpp-sdk.png?branch=master)](https://travis-ci.org/jimix/iot-cpp-sdk)
+
 ## Overview
 This repository contains AppDynamics IoT C++ SDK that can be used in embedded applications to monitor network perfomance, errors and business metrics.
 

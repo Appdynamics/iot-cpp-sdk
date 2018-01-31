@@ -1,0 +1,33 @@
+language: cpp
+sudo: false
+os:
+    - linux
+    - osx
+
+compiler:
+    - gcc
+    - clang
+
+addons:
+    apt:
+        packages:
+            - doxygen
+            - doxygen-doc
+            - doxygen-latex
+            - doxygen-gui
+            - graphviz
+            - cmake
+            - curl
+            - libcurl4-gnutls-dev
+
+before_install:
+    - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update; fi
+    - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install doxygen curl; fi
+
+script:
+    - mkdir -p build
+    - cd build
+    - cmake -DBUILD_TESTS=1 ..
+    - make
+    - ./tests/tests
+
