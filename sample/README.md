@@ -6,7 +6,6 @@ This sample application uses IoT C++ SDK to fill and send sample IoT data (Custo
 ## Steps
 
 1. Build Sample Application using instructions given in [README](../README.md#Installation)
-   * You can find the executable `sample` in the build folder once the sample target is built
 2. [Get EUM App Key](https://docs.appdynamics.com/display/PRO44/Set+Up+and+Access+IoT+Monitoring#SetUpandAccessIoTMonitoring-iot-app-key)
 3. [Run the Sample App](#run-sample-app)
 4. [Confirm IoT Data is reported to Collector](https://docs.appdynamics.com/display/PRO44/Confirm+the+IoT+Application+Reported+Data+to+the+Controller)
@@ -15,6 +14,7 @@ This sample application uses IoT C++ SDK to fill and send sample IoT data (Custo
 
 
 ## <a id="run-sample-app"></a>Run the Sample App
+You can find the executable `sample` in the build folder 
 
 Below is usage information for the sample app. Provide AppKey as an input along with any options as needed.
 
