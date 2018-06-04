@@ -232,7 +232,7 @@ appd_iot_error_code_t appd_iot_send_all_beacons(void)
   }
 
   char jsonlen_buf[10];
-  snprintf(jsonlen_buf, sizeof(jsonlen_buf), "%lu", jsondata.length());
+  snprintf(jsonlen_buf, sizeof(jsonlen_buf), "%lu", (unsigned long)jsondata.length());
 
   appd_iot_init_to_zero(&http_req, sizeof(http_req));
 
@@ -252,7 +252,7 @@ appd_iot_error_code_t appd_iot_send_all_beacons(void)
   appd_iot_data_set_string(&http_req.headers[1], "Content-Type", "application/json");
   appd_iot_data_set_string(&http_req.headers[2], "Content-Length", jsonlen_buf);
 
-  appd_iot_log(APPD_IOT_LOG_INFO, "Content Len:%lu", jsondata.length());
+  appd_iot_log(APPD_IOT_LOG_INFO, "Content Len:%lu", (unsigned long)jsondata.length());
 
   http_resp = http_req_send_cb(&http_req);
 
@@ -303,10 +303,9 @@ appd_iot_error_code_t appd_iot_send_all_beacons(void)
 
   if (http_resp->content_len > 0)
   {
-    appd_iot_log(APPD_IOT_LOG_INFO, "Response Content Len:%lu", http_resp->content_len);
+    appd_iot_log(APPD_IOT_LOG_INFO, "Response Content Len:%lu", (unsigned long)http_resp->content_len);
     appd_iot_log(APPD_IOT_LOG_INFO, "Response Content:%s", http_resp->content);
   }
-
 
   if (http_resp->resp_code >= 200 && http_resp->resp_code < 300)
   {

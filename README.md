@@ -84,6 +84,13 @@ $ cmake .. -DBUILD_TESTS=1
 $ make
 ```
 
+If you want to build a 32 bit library on a 64 bit machine, set the flag DBUILD_32BIT
+
+```sh
+$ cmake .. -DBUILD_32BIT=1
+$ make
+```
+
 You can also build individual targets using below commands
 
 ```sh
