@@ -22,6 +22,10 @@ file(GLOB SOURCES "src/*.cpp")
 ######################################################
 add_executable(sample ${SOURCES})
 
+if(BUILD_32BIT)
+set_target_properties(sample PROPERTIES COMPILE_FLAGS "-m32" LINK_FLAGS "-m32")
+endif()
+
 add_dependencies(sample appdynamicsiotsdk)
 
 target_link_libraries(sample ${APPD_SDK_LINK_LIBS} curl)

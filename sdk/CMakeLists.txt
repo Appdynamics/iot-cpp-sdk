@@ -8,7 +8,9 @@ project(appdynamicsiotsdk)
 
 #library will be installed in sdk folder
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY lib)
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pedantic -Werror -Wall")
+
+#-Wno-long-long to ignore warning when using PRId64 with ISO C++98 standard gnu_printf
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pedantic -Werror -Wall -Wno-long-long")
 
 #########################
 # Include Directories
@@ -25,7 +27,9 @@ file(GLOB SOURCES "src/*.cpp")
 #Generate the shared library from the sources
 add_library(appdynamicsiotsdk SHARED ${SOURCES})
 
-
+if(BUILD_32BIT)
+set_target_properties(appdynamicsiotsdk PROPERTIES COMPILE_FLAGS "-m32" LINK_FLAGS "-m32")
+endif()
  
 #Set the location for library installation. Use "sudo make install" to apply
 install(TARGETS appdynamicsiotsdk DESTINATION /usr/lib)
