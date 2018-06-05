@@ -46,6 +46,11 @@ You can install curl and its headers using below commands:
 $ sudo apt-get install curl
 $ sudo apt-get install libcurl4-gnutls-dev
 ```
+On 32 bit machines, you might also need multilib
+
+```sh
+$ sudo apt-get install gcc-multilib g++-multilib
+```
 
 ## Platforms
 
