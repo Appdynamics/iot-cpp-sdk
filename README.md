@@ -33,6 +33,11 @@ Also, ensure your system has all the tools (g++, make, libc, git etc) to build c
 $ sudo apt-get install build-essential
 $ sudo apt-get install git
 ```
+On 32 bit machines, you might also need multilib
+
+```sh
+$ sudo apt-get install gcc-multilib g++-multilib
+```
 
 ## Dependencies
 
@@ -45,11 +50,6 @@ You can install curl and its headers using below commands:
 ```sh
 $ sudo apt-get install curl
 $ sudo apt-get install libcurl4-gnutls-dev
-```
-On 32 bit machines, you might also need multilib
-
-```sh
-$ sudo apt-get install gcc-multilib g++-multilib
 ```
 
 ## Platforms
