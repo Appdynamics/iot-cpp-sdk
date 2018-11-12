@@ -90,6 +90,11 @@ Only sdk and sample targets are built by default. To build tests, run
 $ cmake .. -DBUILD_TESTS=1
 $ make
 ```
+If you want to view the code coverage done by the tests, set the flag -DBUILD_COVERAGE in addition to the -DBUILD_TESTS flag
+
+```sh
+$ cmake .. -DBUILD_TESTS=1 -DBUILD_COVERAGE=1
+```
 
 If you want to build a 32 bit library on a 64 bit machine, set the flag DBUILD_32BIT
 
@@ -105,6 +110,14 @@ $ make appdynamicsiotsdk
 $ make sample
 $ make tests
 ```
+
+You can run tests from the `build` folder by using commands below
+```sh
+$ make ./run-tests
+```
+
+You can view the code coverage report from the `build` folder by opening the
+`out/index.html` file
 
 ## How to Use
 

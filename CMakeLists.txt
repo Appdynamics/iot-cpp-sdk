@@ -19,6 +19,12 @@ set(BUILD_TESTS, 0)
 # To build 32 bit targets on a 64 bit architecture, add option flag -DBUILD_32BIT=1 to cmake command
 set(BUILD_32BIT, 0)
 
+#####################################
+# Code Coverage for sdk
+#####################################
+# To run report on code coverage, add option flag -DBUILD_COVERAGE=1 to cmake command
+set(BUILD_COVERAGE, 0)
+
 if(BUILD_TESTS)
 add_subdirectory(tests)
 endif()
