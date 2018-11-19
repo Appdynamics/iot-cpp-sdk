@@ -32,6 +32,7 @@ Also, ensure your system has all the tools (g++, make, libc, git etc) to build c
 ```sh
 $ sudo apt-get install build-essential
 $ sudo apt-get install git
+$ sudo apt-get install lcov
 ```
 On 32 bit machines, you might also need multilib
 
@@ -90,11 +91,13 @@ Only sdk and sample targets are built by default. To build tests, run
 $ cmake .. -DBUILD_TESTS=1
 $ make
 ```
-If you want to view the code coverage done by the tests, set the flag -DBUILD_COVERAGE in addition to the -DBUILD_TESTS flag
+
+If you want to view the code coverage done by the tests, run
 
 ```sh
-$ cmake .. -DBUILD_TESTS=1 -DBUILD_COVERAGE=1
+$ cmake .. -DENABLE_COVERAGE=1
 ```
+Code coverage has a dependency on `gcov`, `lcov` & `genhtml`.
 
 If you want to build a 32 bit library on a 64 bit machine, set the flag DBUILD_32BIT
 
@@ -109,11 +112,17 @@ You can also build individual targets using below commands
 $ make appdynamicsiotsdk
 $ make sample
 $ make tests
+$ sudo make run-code-coverage
 ```
 
 You can run tests from the `build` folder by using commands below
 ```sh
 $ make ./run-tests
+```
+
+You can run tests from the `build` folder by using commands below
+```sh
+$ make ./run-code-coverage
 ```
 
 You can view the code coverage report from the `build` folder by opening the

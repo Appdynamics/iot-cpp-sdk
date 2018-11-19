@@ -51,46 +51,50 @@ add_custom_target(run-tests COMMAND ./tests)
 
 add_dependencies(run-tests tests appdynamicsiotsdk)
 
-if (BUILD_COVERAGE)
+##########################################
+# Target
+# run-code-coverage : create a code coverage report
+##########################################
 
-file (GLOB_RECURSE ALL_GCNO_FILES *.gcno)
-file (GLOB_RECURSE ALL_GCDA_FILES *.gcda)
-file (GLOB_RECURSE ALL_GCOV_FILES *.gcov)
-file (GLOB_RECURSE ALL_INFO_FILES *.info)
+if (ENABLE_COVERAGE)
+    FIND_PROGRAM(GCOV_PATH gcov)
+    FIND_PROGRAM(LCOV_PATH lcov)
+    FIND_PROGRAM(GENHTML_PATH genhtml)
 
-foreach (gcnofile ${ALL_GCNO_FILES})
-    add_custom_command(
-    TARGET run-tests POST_BUILD
-    COMMAND gcov -s ${CMAKE_SOURCE_DIR}/sdk/src -o ${CMAKE_BINARY_DIR}/sdk/CMakeFiles/appdynamicsiotsdk.dir/src/ ${gcnofile}
-    WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
-    VERBATIM)
-endforeach()
+    IF(NOT GCOV_PATH)
+        MESSAGE(FATAL_ERROR "gcov not found! Aborting...")
+    ENDIF() # NOT GCOV_PATH
 
-add_custom_command(
-    TARGET run-tests POST_BUILD
+    IF(NOT LCOV_PATH)
+        MESSAGE(FATAL_ERROR "lcov not found! Aborting...")
+    ENDIF() # NOT LCOV_PATH
+
+    IF(NOT GENHTML_PATH)
+        MESSAGE(FATAL_ERROR "genhtml not found! Aborting...")
+    ENDIF() # NOT GENHTML_PATH
+endif()
+
+add_custom_target(run-code-coverage
     COMMAND lcov --capture --directory . --output-file appd-iot-cpp-coverage-tmp.info
     COMMAND lcov -r appd-iot-cpp-coverage-tmp.info "/usr/include/*" "*/iot-cpp-sdk/sdk/include/*" "*.hpp" --directory . --output-file appd-iot-cpp-coverage.info
     COMMAND genhtml appd-iot-cpp-coverage.info --output-directory out
     COMMAND echo ""
     COMMAND echo "Code Coverage Report is available at ${CMAKE_BINARY_DIR}/out/index.html"
     COMMAND echo ""
+    COMMAND ${CMAKE_COMMAND} -E remove ${CMAKE_BINARY_DIR}/appd-iot-cpp-coverage-tmp.info
+    COMMAND ${CMAKE_COMMAND} -E remove ${CMAKE_BINARY_DIR}/appd-iot-cpp-coverage.info
     WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
+    COMMENT "generating HTML report from lcov files"
     VERBATIM)
 
+add_dependencies(run-code-coverage run-tests tests appdynamicsiotsdk)
+
+file (GLOB_RECURSE ALL_GCNO_FILES *.gcno)
 foreach (gcnofile ${ALL_GCNO_FILES})
-    file(REMOVE_RECURSE ${gcnofile})
+    add_custom_command(TARGET run-code-coverage PRE_BUILD
+    COMMAND echo " .... running gcov ..."
+    COMMAND gcov -s ${CMAKE_SOURCE_DIR}/sdk/src -o ${CMAKE_BINARY_DIR}/sdk/CMakeFiles/appdynamicsiotsdk.dir/src/ ${gcnofile}
+    WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
+    COMMENT "Running gcov"
+    VERBATIM)
 endforeach()
-
-foreach (gcdafile ${ALL_GCDA_FILES})
-    file(REMOVE_RECURSE ${gcdafile})
-endforeach()
-
-foreach (gcovfile ${ALL_GCOV_FILES})
-    file(REMOVE_RECURSE ${gcovfile})
-endforeach()
-
-foreach (infofile ${ALL_INFO_FILES})
-    file(REMOVE_RECURSE ${infofile})
-endforeach()
-
-endif()

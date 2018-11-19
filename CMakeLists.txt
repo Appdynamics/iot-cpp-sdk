@@ -22,8 +22,12 @@ set(BUILD_32BIT, 0)
 #####################################
 # Code Coverage for sdk
 #####################################
-# To run report on code coverage, add option flag -DBUILD_COVERAGE=1 to cmake command
-set(BUILD_COVERAGE, 0)
+# To run report on code coverage, add option flag -DENABLE_COVERAGE=1 to cmake command
+set(ENABLE_COVERAGE, 0)
+
+if (ENABLE_COVERAGE)
+set(BUILD_TESTS 1 CACHE STRING "Build the Test Suite")
+endif()
 
 if(BUILD_TESTS)
 add_subdirectory(tests)
