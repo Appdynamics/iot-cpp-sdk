@@ -52,6 +52,7 @@ add_custom_target(run-tests COMMAND ./tests)
 add_dependencies(run-tests tests appdynamicsiotsdk)
 
 if (BUILD_COVERAGE)
+
 file (GLOB_RECURSE ALL_GCNO_FILES *.gcno)
 file (GLOB_RECURSE ALL_GCDA_FILES *.gcda)
 file (GLOB_RECURSE ALL_GCOV_FILES *.gcov)
@@ -70,6 +71,9 @@ add_custom_command(
     COMMAND lcov --capture --directory . --output-file appd-iot-cpp-coverage-tmp.info
     COMMAND lcov -r appd-iot-cpp-coverage-tmp.info "/usr/include/*" "*/iot-cpp-sdk/sdk/include/*" "*.hpp" --directory . --output-file appd-iot-cpp-coverage.info
     COMMAND genhtml appd-iot-cpp-coverage.info --output-directory out
+    COMMAND echo ""
+    COMMAND echo "Code Coverage Report is available at ${CMAKE_BINARY_DIR}/out/index.html"
+    COMMAND echo ""
     WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
     VERBATIM)
 
