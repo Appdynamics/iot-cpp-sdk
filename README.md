@@ -34,6 +34,8 @@ $ sudo apt-get install build-essential
 $ sudo apt-get install git
 $ sudo apt-get install lcov
 ```
+Note: `lcov` version 1.13 or higher is needed.
+
 On 32 bit machines, you might also need multilib
 
 ```sh
