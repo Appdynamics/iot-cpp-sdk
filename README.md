@@ -122,7 +122,7 @@ You can run tests from the `build` folder by using commands below
 $ make ./run-tests
 ```
 
-You can run tests from the `build` folder by using commands below
+You can run a report on code coverage from the `build` folder by using commands below
 ```sh
 $ make ./run-code-coverage
 ```
