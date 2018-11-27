@@ -31,6 +31,11 @@ if(BUILD_32BIT)
 set_target_properties(appdynamicsiotsdk PROPERTIES COMPILE_FLAGS "-m32" LINK_FLAGS "-m32")
 endif()
  
+if(ENABLE_COVERAGE)
+set_target_properties(appdynamicsiotsdk PROPERTIES COMPILE_FLAGS "--coverage")
+set_target_properties(appdynamicsiotsdk PROPERTIES LINK_FLAGS "--coverage")
+endif()
+
 #Set the location for library installation. Use "sudo make install" to apply
 install(TARGETS appdynamicsiotsdk DESTINATION /usr/lib)
 

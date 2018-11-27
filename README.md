@@ -32,7 +32,10 @@ Also, ensure your system has all the tools (g++, make, libc, git etc) to build c
 ```sh
 $ sudo apt-get install build-essential
 $ sudo apt-get install git
+$ sudo apt-get install lcov
 ```
+Note: `lcov` version 1.13 or higher is needed.
+
 On 32 bit machines, you might also need multilib
 
 ```sh
@@ -91,6 +94,13 @@ $ cmake .. -DBUILD_TESTS=1
 $ make
 ```
 
+If you want to build tests and enable code coverage, run
+
+```sh
+$ cmake .. -DENABLE_COVERAGE=1
+```
+Code coverage has a dependency on `gcov`, `lcov` & `genhtml`.
+
 If you want to build a 32 bit library on a 64 bit machine, set the flag DBUILD_32BIT
 
 ```sh
@@ -105,6 +115,19 @@ $ make appdynamicsiotsdk
 $ make sample
 $ make tests
 ```
+
+You can run tests from the `build` folder by using commands below
+```sh
+$ make ./run-tests
+```
+
+You can run a report on code coverage from the `build` folder by using commands below
+```sh
+$ sudo make run-code-coverage
+```
+
+You can view the code coverage report from the `build` folder by opening the
+`out/index.html` file
 
 ## How to Use
 
