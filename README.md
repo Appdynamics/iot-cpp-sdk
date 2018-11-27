@@ -114,7 +114,6 @@ You can also build individual targets using below commands
 $ make appdynamicsiotsdk
 $ make sample
 $ make tests
-$ sudo make run-code-coverage
 ```
 
 You can run tests from the `build` folder by using commands below
@@ -124,7 +123,7 @@ $ make ./run-tests
 
 You can run a report on code coverage from the `build` folder by using commands below
 ```sh
-$ make ./run-code-coverage
+$ sudo make ./run-code-coverage
 ```
 
 You can view the code coverage report from the `build` folder by opening the

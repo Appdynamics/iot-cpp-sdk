@@ -76,7 +76,7 @@ endif()
 
 add_custom_target(run-code-coverage
     COMMAND lcov --capture --directory . --output-file appd-iot-cpp-coverage-tmp.info
-    COMMAND lcov -r appd-iot-cpp-coverage-tmp.info "/usr/include/*" "*/iot-cpp-sdk/sdk/include/*" "*.hpp" --directory . --output-file appd-iot-cpp-coverage.info
+    COMMAND lcov -r appd-iot-cpp-coverage-tmp.info "*/usr/include/*" "*/iot-cpp-sdk/sdk/include/*" "*.hpp" --directory . --output-file appd-iot-cpp-coverage.info
     COMMAND genhtml appd-iot-cpp-coverage.info --output-directory out
     COMMAND echo ""
     COMMAND echo "Code Coverage Report is available at ${CMAKE_BINARY_DIR}/out/index.html"
