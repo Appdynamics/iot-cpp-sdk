@@ -72,7 +72,6 @@ if (ENABLE_COVERAGE)
     IF(NOT GENHTML_PATH)
         MESSAGE(FATAL_ERROR "genhtml not found! Aborting...")
     ENDIF() # NOT GENHTML_PATH
-endif()
 
 add_custom_target(run-code-coverage
     COMMAND lcov --capture --directory . --output-file appd-iot-cpp-coverage-tmp.info
@@ -98,3 +97,5 @@ foreach (gcnofile ${ALL_GCNO_FILES})
     COMMENT "Running gcov"
     VERBATIM)
 endforeach()
+
+endif()

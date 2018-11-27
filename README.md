@@ -94,7 +94,7 @@ $ cmake .. -DBUILD_TESTS=1
 $ make
 ```
 
-If you want to view the code coverage done by the tests, run
+If you want to build tests and enable code coverage, run
 
 ```sh
 $ cmake .. -DENABLE_COVERAGE=1
@@ -123,7 +123,7 @@ $ make ./run-tests
 
 You can run a report on code coverage from the `build` folder by using commands below
 ```sh
-$ sudo make ./run-code-coverage
+$ sudo make run-code-coverage
 ```
 
 You can view the code coverage report from the `build` folder by opening the
