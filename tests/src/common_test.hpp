@@ -23,7 +23,7 @@
 #define TEST_EUM_COLLECTOR_URL_APP_KEY_PREFIX "/eumcollector/iot/v1/application/"
 #define TEST_EUM_COLLECTOR_URL_APP_KEY_SUFFIX "/beacons"
 #define TEST_EUM_COLLECTOR_URL_ENABLED_SUFFIX "/enabled"
-#define TEST_SDK_VERSION "4.4.1.0"
+#define TEST_SDK_VERSION "APPD_IOT_CPP_SDK_1.0.0"
 #define TEST_AGENT_VERSION_KEY "agentVersion"
 
 
