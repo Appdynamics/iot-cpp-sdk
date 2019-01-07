@@ -22,7 +22,7 @@
 #include "config.hpp"
 #include "utils.hpp"
 
-#define APPD_IOT_SDK_VERSION "4.4.1.0"
+#define APPD_IOT_SDK_VERSION "APPD_IOT_CPP_SDK_1.0.1"
 
 static beacon_t global_beacon;
 
